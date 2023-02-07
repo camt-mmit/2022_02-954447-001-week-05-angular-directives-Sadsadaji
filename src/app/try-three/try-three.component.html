@@ -1,0 +1,18 @@
+<div class="t3">
+  <h2>Try Three</h2>
+
+<button class="material-symbols-outlined" type="button" (click)="add()">add_circle</button>
+
+
+<div *ngFor="let item of items; let i = index">
+  <input
+    #input
+    type="number"
+    [value]="item.value"
+    (change)="onChange(i, input.valueAsNumber)"
+  />
+  <button type="button" (click)="delete(i)" [disabled]="items.length <= 1">Delete</button>
+</div>
+
+<output>{{ getResult() }}</output>
+</div>

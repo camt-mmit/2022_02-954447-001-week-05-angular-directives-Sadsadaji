@@ -1,0 +1,41 @@
+<div class="main">
+  <h1>Section</h1>
+<div class="addsec">
+  <button type="button" (click)="addSection()">+Section</button>
+</div>
+  <section *ngFor="let text of texts ; let i =index">
+    <h2>
+      <div class="addinput">
+        <button type="button" (click)="addInput(text)">+input</button>
+      </div>
+
+      section {{ i + 1 }}
+      <div class="rmsec">
+        <button  class="material-symbols-outlined" type="button" [disabled]="texts.length <= 1" (click)="removeSection(i)">disabled_by_default</button>
+      </div>
+    </h2>
+    <div class="inputbar">
+        <div class="showinput" *ngFor="let input of text; let j = index">
+          <label for="input-{{ i }}-{{ j }}">Input {{ j + 1 }}</label>
+          <label class="textinput">::</label>
+          <input #elem
+                  type="number"
+                  id="input-{{ i }}-{{ j }}"
+                  [value]="input.value"
+                  (change)="input.value = elem.valueAsNumber"
+
+                />
+
+          <div class="rminput">
+            <button class="material-symbols-outlined" type="button" (click)="removeInput(text, j)">disabled_by_default</button>
+          </div>
+        </div>
+    </div>
+    <div class="showresult">
+      Result
+      <output> {{ getResult(text) }}</output>
+    </div>
+
+  </section>
+</div>
+

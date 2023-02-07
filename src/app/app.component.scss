@@ -1,0 +1,20 @@
+.all {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.cmp-nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cmp-nav-links a {
+  border : solid 5px red;
+  margin: 1rem;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 50px;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

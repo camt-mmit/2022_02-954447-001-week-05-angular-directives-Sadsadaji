@@ -1,0 +1,14 @@
+<div class="t1">
+  <h2>Try one</h2>
+
+    <div *ngFor="let item of items ; let i =index">
+      <input
+      #input
+      type="number"
+      [value]="item"
+      (change)="onChange(i, input.valueAsNumber)"/>
+
+    </div>
+
+  <output>{{ items.join(', ') }}</output>
+</div>
